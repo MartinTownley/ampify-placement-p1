@@ -9,6 +9,8 @@
 #ifndef tokeniser_h
 #define tokeniser_h
 
+#include "constants.h"
+
 class Tokeniser
 {
 public:
@@ -18,8 +20,8 @@ public:
         add,
         subtract,
         multiply,
-        
-        unknown,
+        divide,
+        unknown
     };
     
     struct TokenList
@@ -78,6 +80,7 @@ private:
         if (find (input, "+")) return Type::add;
         if (find (input, "-")) return Type::subtract;
         if (find (input, "*")) return Type::multiply;
+        if (find (input, "/")) return Type::divide;
         
         return Type::unknown;
     }
@@ -93,6 +96,9 @@ private:
         if (auto result = findAndExtractLHS (input, "*"))
             return result;
         
+        if (auto result = findAndExtractLHS (input, "/"))
+            return result;
+        
         return {};
     }
     
@@ -105,6 +111,9 @@ private:
             return result;
         
         if (auto result = findAndExtractRHS (input, "*"))
+            return result;
+        
+        if (auto result = findAndExtractRHS (input, "/"))
             return result;
         
         return {};

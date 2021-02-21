@@ -26,6 +26,8 @@ public:
                 return tokens.lhs - tokens.rhs;
             case Tokeniser::Type::multiply:
                 return tokens.lhs * tokens.rhs;
+            case Tokeniser::Type::divide:
+                return tokens.lhs / tokens.rhs;
             default:
                 break;
         }

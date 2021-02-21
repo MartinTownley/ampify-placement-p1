@@ -10,6 +10,8 @@
 #ifndef inputProcessor_h
 #define inputProcessor_h
 
+#include "constants.h"
+
 class InputProcessor
 {
 public:
