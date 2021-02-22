@@ -4,7 +4,7 @@
 
 ### Instructions
 
-The repository contains a compiled version of the application named "calcu" in the folder "dist". However, if you wish to build, you can do so using CMake:
+The repository contains a compiled version of the root directory of the repository. However, if you wish to build, you can do so using CMake:
 
 1) cd into the root folder of the repository.
 2) Execute the command "cmake -S . -B ." to generate the makefiles for the executatble in the current directory.
