@@ -56,22 +56,40 @@ private:
     
     bool find (std::string input, std::string character) const
     {
+        //std::cout << character <<std::endl;
         return input.find (character) != std::string::npos;
     }
     
     std::optional <double> findAndExtractLHS (std::string input, std::string character) const
     {
+        //constexpr double pi     { 3.14159265358979323846 };
         if (auto pos = input.find (character); pos != std::string::npos)
-            return std::stod (input.substr (0, pos));
-        
+        {
+            if (input.substr (0, pos) == "pi" || input.substr (0,pos-1) == "pi")
+            {
+                return pi;
+            }
+            else
+            {
+                return std::stod (input.substr (0, pos));
+            }
+        }
         return {};
     }
     
     std::optional <double> findAndExtractRHS (std::string input, std::string character) const
     {
         if (auto pos = input.find (character); pos != std::string::npos)
-            return std::stod (input.substr (pos + 1));
-        
+        {
+            if (input.substr (pos+1) == " pi" || input.substr (pos+1) == "pi")
+            {
+                return pi;
+            }
+            else
+            {
+                return std::stod (input.substr (pos + 1));
+            }
+        }
         return {};
     }
     

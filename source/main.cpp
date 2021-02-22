@@ -1,4 +1,3 @@
-//#define __USE__MATH__DEFINES
 
 #include <iostream>
 #include <sstream>
@@ -12,8 +11,6 @@
 #include "resultChecker.h"
 #include "inputProcessor.h"
 #include "constants.h" 
-
-const double pi = 3.141592653589793238463;
 
 void run ()
 {

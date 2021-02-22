@@ -42,6 +42,7 @@ private:
     
     void processInput (std::string input) const
     {
+        
         if (auto tokens = Tokeniser ().tokenise (input))
             std::cout << "Answer: " << Calculator ().calculate (*tokens) << std::endl;
         else
